@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PanelName>FT8756Video</PanelName>
+<PanelDescription>FT8756 video mode dsi tm panel</PanelDescription>
+<Group id="Active Timing">
+ <HorizontalActive>1080</HorizontalActive>
+ <HorizontalFrontPorch>16</HorizontalFrontPorch>
+ <HorizontalBackPorch>40</HorizontalBackPorch>
+ <HorizontalSyncPulse>6</HorizontalSyncPulse>
+ <HorizontalSyncSkew>0</HorizontalSyncSkew>
+ <HorizontalLeftBorder>0</HorizontalLeftBorder>
+ <HorizontalRightBorder>0</HorizontalRightBorder>
+ <VerticalActive>2300</VerticalActive>
+ <VerticalFrontPorch>8</VerticalFrontPorch>
+ <VerticalBackPorch>32</VerticalBackPorch>
+ <VerticalSyncPulse>4</VerticalSyncPulse>
+ <VerticalSyncSkew>0</VerticalSyncSkew>
+ <VerticalTopBorder>0</VerticalTopBorder>
+ <VerticalBottomBorder>0</VerticalBottomBorder>
+</Group>
+<Group id="Display Interface">
+ <InterfaceType>8</InterfaceType>
+ <InterfaceColorFormat>3</InterfaceColorFormat>
+</Group>
+<Group id="DSI Interface">
+ <DSIChannelId>1</DSIChannelId>
+ <DSIVirtualId>0</DSIVirtualId>
+ <DSIColorFormat>36</DSIColorFormat>
+ <DSITrafficMode>1</DSITrafficMode>
+ <DSILanes>4</DSILanes>
+ <DSILowPowerModeInBLLPEOF>True</DSILowPowerModeInBLLPEOF>
+ <DSILowPowerModeInBLLP>True</DSILowPowerModeInBLLP>
+ <DSILP11AtInit>True</DSILP11AtInit>
+ <DSIRefreshRate>0x3C0000</DSIRefreshRate>
+ <DSICmdSwapInterface>False</DSICmdSwapInterface>
+ <DSICmdUsingTrigger>False</DSICmdUsingTrigger>
+ <DSIControllerMapping>
+  00
+ </DSIControllerMapping>
+</Group>
+<DSIInitSequence>
+ 15 00 00
+ 39 FF 87 56 01
+ 15 00 80
+ 39 FF 87 56
+ 15 00 80
+ 39 C0 00 92 00 08 00 24
+ 15 00 90
+ 39 C0 00 92 00 08 00 24
+ 15 00 B0
+ 39 C0 00 92 00 08 24
+ 15 00 C1
+ 39 C0 00 D9 00 A5 00 91 00 F8
+ 15 00 D7
+ 39 C0 00 91 00 08 00 24
+ 15 00 90
+ 39 CE 00 8E 0C DF 00 8E 80 09 13 00 04 00 1E 1F 16
+ 15 00 F1
+ 39 CE 12 09 0C 01 1B 01 1C 01 36
+ 15 00 B0
+ 39 CF 00 00 BF C3
+ 15 00 A0
+ 39 C0 00 92 00 08 00 24
+ 15 51 A3
+ 15 53 24
+ 15 55 01
+ 15 11 00
+ FF 60
+ 15 29 00
+</DSIInitSequence>
+<DSITermSequence>
+ 15 28 00
+ FF 32
+ 15 10 00
+ FF 50
+</DSITermSequence>
+<PMICGPIODefaultHigh>0x1106</PMICGPIODefaultHigh>
+ <DisplayResetInfo>0 20 4000 11000 0 0 5000</DisplayResetInfo>
+<Group id="Backlight Configuration">
+ <BacklightType>2</BacklightType>
+ <BacklightBitWidth>11</BacklightBitWidth>
+</Group>
+<Group id="I2C configuration">
+ <DSII2CSlaveAddressList>36</DSII2CSlaveAddressList>
+ <DSII2CI2CNumOfSlaves>1</DSII2CI2CNumOfSlaves>
+ <DSII2COffsetLength>1</DSII2COffsetLength>
+ <DSII2CGSBIPort>2</DSII2CGSBIPort>
+ <DSII2CFrequency>0x64</DSII2CFrequency>
+ <DSII2CBLRegList>0x20 0x21</DSII2CBLRegList>
+ <DSII2CBLNumOfReg>0x02</DSII2CBLNumOfReg>
+ <DSII2CBLEnableRegList>0x24 0x01</DSII2CBLEnableRegList>
+ <DSII2CBLEnableNumOfReg>0x01</DSII2CBLEnableNumOfReg>
+</Group>
+<I2CInitSequence>
+ 36 10 00
+ 36 16 01
+ 36 17 19
+ 36 1A 02
+ 36 1C 05
+ 36 20 00
+ 36 21 00
+</I2CInitSequence>
